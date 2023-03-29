@@ -137,6 +137,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="plugin\menu.h" />
     <ClInclude Include="plugin\Settings.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="utils.h" />
     <ClInclude Include="utils\MemoryMgr.h" />
   </ItemGroup>
@@ -192,6 +193,9 @@
     <ClCompile Include="plugin\Anims.cpp" />
     <ClCompile Include="plugin\menu.cpp" />
     <ClCompile Include="plugin\Settings.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DPLHook.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

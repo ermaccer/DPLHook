@@ -192,6 +192,9 @@
     <ClInclude Include="dpl\ECharacterType.h">
       <Filter>Header Files\dpl</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -338,5 +341,10 @@
     <ClCompile Include="dpl\AIFelonySystemFelonyManager.cpp">
       <Filter>Header Files\dpl</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DPLHook.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
