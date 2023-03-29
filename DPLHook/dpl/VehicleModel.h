@@ -1,6 +1,6 @@
 #pragma once
 
-enum tVehicleModelUID : char {
+enum tVehicleModelUID : int {
 	tVehicleModelUID_BX_9,
 	tVehicleModelUID_BX_9_Racer,
 	tVehicleModelUID_Antilli_VO3,
