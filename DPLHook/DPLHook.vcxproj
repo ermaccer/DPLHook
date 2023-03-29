@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{77ef605c-a91b-489c-8073-eef41abcb4a3}</ProjectGuid>
+    <RootNamespace>DPLHook</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetExt>.asi</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetExt>.asi</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DPLHOOK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>d3d9.lib;Dxguid.lib;dinput8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;DPLHOOK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>d3d9.lib;Dxguid.lib;dinput8.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="core\Matrix.h" />
+    <ClInclude Include="core\Vector.h" />
+    <ClInclude Include="dpl\AIFelonySystemFelonyManager.h" />
+    <ClInclude Include="dpl\AnimInstance.h" />
+    <ClInclude Include="dpl\AnimLib.h" />
+    <ClInclude Include="dpl\AnimSystem.h" />
+    <ClInclude Include="dpl\Camera.h" />
+    <ClInclude Include="dpl\Character.h" />
+    <ClInclude Include="dpl\CharacterCategoryManager.h" />
+    <ClInclude Include="dpl\CharacterWeapons.h" />
+    <ClInclude Include="dpl\common.h" />
+    <ClInclude Include="dpl\ECharacterType.h" />
+    <ClInclude Include="dpl\ECharAnimType.h" />
+    <ClInclude Include="dpl\ECheat.h" />
+    <ClInclude Include="dpl\GameOverlayManager.h" />
+    <ClInclude Include="dpl\LifeAcquirableVehicleManager.h" />
+    <ClInclude Include="dpl\LifeEnvironment.h" />
+    <ClInclude Include="dpl\LifeInstances.h" />
+    <ClInclude Include="dpl\LifeSystem.h" />
+    <ClInclude Include="dpl\Player.h" />
+    <ClInclude Include="dpl\PlayerDriverBehaviour.h" />
+    <ClInclude Include="dpl\ProfileSettings.h" />
+    <ClInclude Include="dpl\ResidentArea.h" />
+    <ClInclude Include="dpl\ResourceManager.h" />
+    <ClInclude Include="dpl\Speed.h" />
+    <ClInclude Include="dpl\Vector4.h" />
+    <ClInclude Include="dpl\Vehicle.h" />
+    <ClInclude Include="dpl\VehicleManager.h" />
+    <ClInclude Include="dpl\VehicleModel.h" />
+    <ClInclude Include="dpl\VehicleSpecification.h" />
+    <ClInclude Include="dpl\VehicleSpecificationManager.h" />
+    <ClInclude Include="dpl\Viewport.h" />
+    <ClInclude Include="dpl\Weapon.h" />
+    <ClInclude Include="dpl\Weapons.h" />
+    <ClInclude Include="eDirectInput8Hook.h" />
+    <ClInclude Include="eDirectX9Hook.h" />
+    <ClInclude Include="eNotifManager.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="helper\eKeyboardMan.h" />
+    <ClInclude Include="imgui\imconfig.h" />
+    <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imgui_impl_dx9.h" />
+    <ClInclude Include="imgui\imgui_impl_win32.h" />
+    <ClInclude Include="imgui\imgui_internal.h" />
+    <ClInclude Include="imgui\imstb_rectpack.h" />
+    <ClInclude Include="imgui\imstb_textedit.h" />
+    <ClInclude Include="imgui\imstb_truetype.h" />
+    <ClInclude Include="IniReader.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="plugin\menu.h" />
+    <ClInclude Include="plugin\Settings.h" />
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="utils\MemoryMgr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="core\Matrix.cpp" />
+    <ClCompile Include="core\Vector.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="dpl\AIFelonySystemFelonyManager.cpp" />
+    <ClCompile Include="dpl\AnimInstance.cpp" />
+    <ClCompile Include="dpl\AnimLib.cpp" />
+    <ClCompile Include="dpl\AnimSystem.cpp" />
+    <ClCompile Include="dpl\Camera.cpp" />
+    <ClCompile Include="dpl\Character.cpp" />
+    <ClCompile Include="dpl\CharacterCategoryManager.cpp" />
+    <ClCompile Include="dpl\CharacterWeapons.cpp" />
+    <ClCompile Include="dpl\common.cpp" />
+    <ClCompile Include="dpl\GameOverlayManager.cpp" />
+    <ClCompile Include="dpl\LifeAcquirableVehicleManager.cpp" />
+    <ClCompile Include="dpl\LifeEnvironment.cpp" />
+    <ClCompile Include="dpl\LifeInstances.cpp" />
+    <ClCompile Include="dpl\LifeProgression.cpp" />
+    <ClCompile Include="dpl\LifeProgression.h" />
+    <ClCompile Include="dpl\LifeSystem.cpp" />
+    <ClCompile Include="dpl\Player.cpp" />
+    <ClCompile Include="dpl\PlayerDriverBehaviour.cpp" />
+    <ClCompile Include="dpl\ProfileSettings.cpp" />
+    <ClCompile Include="dpl\ResidentArea.cpp" />
+    <ClCompile Include="dpl\ResourceManager.cpp" />
+    <ClCompile Include="dpl\Speed.cpp" />
+    <ClCompile Include="dpl\Vector4.cpp" />
+    <ClCompile Include="dpl\Vehicle.cpp" />
+    <ClCompile Include="dpl\VehicleManager.cpp" />
+    <ClCompile Include="dpl\VehicleSpecification.cpp" />
+    <ClCompile Include="dpl\VehicleSpecificationManager.cpp" />
+    <ClCompile Include="dpl\Viewport.cpp" />
+    <ClCompile Include="dpl\Weapon.cpp" />
+    <ClCompile Include="eDirectInput8Hook.cpp" />
+    <ClCompile Include="eDirectX9Hook.cpp" />
+    <ClCompile Include="eNotifManager.cpp" />
+    <ClCompile Include="helper\eKeyboardMan.cpp" />
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_demo.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="imgui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="imgui\imgui_tables.cpp" />
+    <ClCompile Include="imgui\imgui_widgets.cpp" />
+    <ClCompile Include="IniReader.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="plugin\Anims.cpp" />
+    <ClCompile Include="plugin\menu.cpp" />
+    <ClCompile Include="plugin\Settings.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

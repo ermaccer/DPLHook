@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\dpl">
+      <UniqueIdentifier>{f94d0dd1-b5f6-40e5-876e-dbe64dbe5ef2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils">
+      <UniqueIdentifier>{73ba2eb1-c0cb-4bc5-ba53-8f4ea7bd4852}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\plugin">
+      <UniqueIdentifier>{3f9a97ce-2154-484c-86e3-ea8aa6f19a86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core">
+      <UniqueIdentifier>{106c2c33-6bee-4751-813f-c7c302e7a6ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\imgui">
+      <UniqueIdentifier>{28d97f7a-953a-4558-b8c7-ce6b5c607411}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\helper">
+      <UniqueIdentifier>{a6242cf1-3c1c-4658-a7e8-21280eacdc82}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\VehicleManager.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\LifeSystem.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\VehicleSpecificationManager.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\VehicleModel.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\VehicleSpecification.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\MemoryMgr.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="plugin\menu.h">
+      <Filter>Header Files\plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\LifeInstances.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Vector.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\Vector4.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_rectpack.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_textedit.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_truetype.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_dx9.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_win32.h">
+      <Filter>Header Files\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="eDirectX9Hook.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\common.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\ResourceManager.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="eDirectInput8Hook.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\Vehicle.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\LifeAcquirableVehicleManager.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\PlayerDriverBehaviour.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\ResidentArea.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\CharacterWeapons.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\Weapons.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\Player.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="core\Matrix.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\Character.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\GameOverlayManager.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\Camera.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="plugin\Settings.h">
+      <Filter>Header Files\plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="IniReader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="eNotifManager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="helper\eKeyboardMan.h">
+      <Filter>Header Files\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\CharacterCategoryManager.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\Viewport.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\AnimInstance.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\AnimSystem.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\AnimLib.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\Weapon.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\LifeEnvironment.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\Speed.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\ProfileSettings.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\ECheat.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\ECharAnimType.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\AIFelonySystemFelonyManager.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+    <ClInclude Include="dpl\ECharacterType.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\VehicleManager.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\VehicleSpecificationManager.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\VehicleSpecification.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="plugin\menu.cpp">
+      <Filter>Header Files\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\LifeInstances.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Vector.cpp">
+      <Filter>Header Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\Vector4.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>Header Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_demo.cpp">
+      <Filter>Header Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>Header Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_tables.cpp">
+      <Filter>Header Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>Header Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_dx9.cpp">
+      <Filter>Header Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_win32.cpp">
+      <Filter>Header Files\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="eDirectX9Hook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\common.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\ResourceManager.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="eDirectInput8Hook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\LifeAcquirableVehicleManager.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\CharacterWeapons.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\LifeSystem.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\PlayerDriverBehaviour.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\Player.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\Character.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\Vehicle.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\ResidentArea.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\Camera.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\GameOverlayManager.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="plugin\Settings.cpp">
+      <Filter>Header Files\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="IniReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="eNotifManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="helper\eKeyboardMan.cpp">
+      <Filter>Header Files\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\CharacterCategoryManager.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\AnimInstance.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\AnimSystem.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\Viewport.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\AnimLib.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\Weapon.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\LifeEnvironment.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="core\Matrix.cpp">
+      <Filter>Header Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\LifeProgression.h">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\LifeProgression.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="plugin\Anims.cpp">
+      <Filter>Header Files\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\Speed.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\ProfileSettings.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+    <ClCompile Include="dpl\AIFelonySystemFelonyManager.cpp">
+      <Filter>Header Files\dpl</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
