@@ -23,3 +23,7 @@ vehicle spawner, weapon spawner and much more!
 
 Read more at:
 https://ermaccer.github.io/posts/dplhook
+
+# Credits
+
+**Fireboyd78** - Enums, animation list.
