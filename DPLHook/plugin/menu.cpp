@@ -975,7 +975,7 @@ void DPLMenu::DrawPlayerTab()
 void DPLMenu::DrawVehicleTab()
 {
 	ImGui::TextWrapped("Vehicle");
-	static tVehicleModelUID vID = tVehicleModelUID_BX_9;
+	static tVehicleModelUID vID = tVehicleModelUID_Andec;
 	ImGui::PushItemWidth(-FLT_MIN);
 	if (ImGui::BeginCombo("##vehlist", vehicle))
 	{
