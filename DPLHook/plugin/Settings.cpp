@@ -22,6 +22,7 @@ eSettingsManager::eSettingsManager()
 	iToggleHUDKey = user.ReadInteger("Settings", "iToggleHUDKey", -1);
 	iPlayLastAnimationKey = user.ReadInteger("Settings", "iPlayLastAnimationKey", -1);
 	iStopLastAnimationKey = user.ReadInteger("Settings", "iStopLastAnimationKey", -1);
+	iToggleFreeCameraKey = user.ReadInteger("Settings", "iToggleFreeCameraKey", -1);
 
 	iFreeCameraKeyFOVPlus = user.ReadInteger("Settings", "iFreeCameraKeyFOVPlus", -1);
 	if (iFreeCameraKeyFOVPlus == -1)
@@ -98,6 +99,7 @@ void eSettingsManager::SaveSettings()
 	user.WriteInteger("Settings", "iToggleSlowMoKey", iToggleSlowMoKey);
 	user.WriteInteger("Settings", "iPlayLastAnimationKey", iPlayLastAnimationKey);
 	user.WriteInteger("Settings", "iStopLastAnimationKey", iStopLastAnimationKey);
+	user.WriteInteger("Settings", "iToggleFreeCameraKey", iToggleFreeCameraKey);
 	user.WriteInteger("Settings", "iFreeCameraKeyForward", iFreeCameraKeyForward);
 	user.WriteInteger("Settings", "iFreeCameraKeyBack", iFreeCameraKeyBack);
 	user.WriteInteger("Settings", "iFreeCameraKeyLeft", iFreeCameraKeyLeft);
@@ -140,4 +142,5 @@ void eSettingsManager::ResetKeys()
 	iToggleSlowMoKey = -1;
 	iPlayLastAnimationKey = -1;
 	iStopLastAnimationKey = -1;
+	iToggleFreeCameraKey = -1;
 }

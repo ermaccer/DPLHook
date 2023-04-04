@@ -12,7 +12,7 @@ using namespace DirectX;
 
 #define MAX_TELEPORTS 200
 #define NUM_ANIMS 1358
-#define DPLHOOK_VERSION "0.1.1"
+#define DPLHOOK_VERSION "0.2"
 
 enum eMenuSubMenus {
 	SM_Settings,
@@ -97,6 +97,7 @@ public:
 	void     OnActivateSlowMotion();
 	void	 OnActivatePlayLastAnim();
 	void	 OnActivateStopLastAnim();
+	void	 OnToggleFreeCam();
 	void	 OnToggleSlowMotion();
 	void	 OnToggleHUD();
 	void	 OnToggleSetCamRot();

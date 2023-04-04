@@ -13,6 +13,7 @@ public:
 	int iToggleHUDKey;
 	int iPlayLastAnimationKey;
 	int iStopLastAnimationKey;
+	int iToggleFreeCameraKey;
 
 	// free camera keys
 	int iFreeCameraKeyForward;

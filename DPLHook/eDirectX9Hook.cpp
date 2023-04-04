@@ -227,6 +227,8 @@ LRESULT __stdcall eDirectX9Hook::WndProc(const HWND hWnd, UINT uMsg, WPARAM wPar
 			TheMenu->OnActivatePlayLastAnim();
 		if (wParam == SettingsMgr->iStopLastAnimationKey)
 			TheMenu->OnActivateStopLastAnim();
+		if (wParam == SettingsMgr->iToggleFreeCameraKey)
+			TheMenu->OnToggleFreeCam();
 		break;
 	default:
 		break;

@@ -380,11 +380,19 @@ DPLMenu::DPLMenu()
 
 void DPLMenu::OnActivate()
 {
+	if (m_bPressingKey)
+		return;
+
 	m_bIsActive ^= 1;
 }
 
 void DPLMenu::OnActivateSlowMotion()
 {
+	if (m_bPressingKey)
+		return;
+	if (m_bIsActive)
+		return;
+
 	if (m_bSlowMotion)
 		speed::SetMasterSpeedMultiplier(m_fSlowMotionSpeed);
 	else
@@ -394,6 +402,10 @@ void DPLMenu::OnActivateSlowMotion()
 void DPLMenu::OnActivatePlayLastAnim()
 {
 	if (!GetLifeSystem())
+		return;
+	if (m_bPressingKey)
+		return;
+	if (m_bIsActive)
 		return;
 
 	CCharacter* plrChr = GetLifeSystem()->GetPlayer()->GetDriverBehaviour()->GetCharacter();
@@ -407,6 +419,10 @@ void DPLMenu::OnActivatePlayLastAnim()
 
 void DPLMenu::OnActivateStopLastAnim()
 {
+	if (m_bPressingKey)
+		return;
+	if (m_bIsActive)
+		return;
 	if (!GetLifeSystem())
 		return;
 
@@ -418,6 +434,19 @@ void DPLMenu::OnActivateStopLastAnim()
 	plrChr->KillMissionAnimations();
 }
 
+void DPLMenu::OnToggleFreeCam()
+{
+	if (m_bPressingKey)
+		return;
+	if (m_bIsActive)
+		return;
+
+	m_bCustomCameraPos ^= 1;
+	m_bCustomCameraRot ^= 1;
+	m_bCustomCameraFOV ^= 1;
+	m_bFreeCam ^= 1;
+}
+
 void DPLMenu::OnToggleSlowMotion()
 {
 	m_bSlowMotion ^= 1;
@@ -426,6 +455,10 @@ void DPLMenu::OnToggleSlowMotion()
 
 void DPLMenu::OnToggleHUD()
 {
+	if (m_bPressingKey)
+		return;
+	if (m_bIsActive)
+		return;
 	m_bDisableHUD ^= 1;
 }
 
@@ -1360,6 +1393,7 @@ void DPLMenu::DrawSettings()
 		KeyBind(&SettingsMgr->iToggleHUDKey, "Toggle HUD", "hud");
 		KeyBind(&SettingsMgr->iPlayLastAnimationKey, "Play Last Animation", "pla");
 		KeyBind(&SettingsMgr->iStopLastAnimationKey, "Stop Last Animation", "sla");
+		KeyBind(&SettingsMgr->iToggleFreeCameraKey, "Toggle Free Camera", "fc");
 		ImGui::Separator();
 		ImGui::LabelText("", "Camera/Airbreak");
 		ImGui::Separator();
