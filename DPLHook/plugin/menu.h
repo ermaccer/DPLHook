@@ -12,7 +12,7 @@ using namespace DirectX;
 
 #define MAX_TELEPORTS 200
 #define NUM_ANIMS 1358
-#define DPLHOOK_VERSION "0.1"
+#define DPLHOOK_VERSION "0.1.1"
 
 enum eMenuSubMenus {
 	SM_Settings,
@@ -99,6 +99,7 @@ public:
 	void	 OnActivateStopLastAnim();
 	void	 OnToggleSlowMotion();
 	void	 OnToggleHUD();
+	void	 OnToggleSetCamRot();
 
 	void	 OnToggleInvincibility();
 	void	 OnToggleInvincibilityCars();
@@ -132,7 +133,6 @@ public:
 	void     LoadLocationFile();
 };
 
-tVehicleModelUID GetUIDFromName(const char* name);
 EWeapons		 GetWIDFromName(const char* name);
 extern DPLMenu* TheMenu;
 

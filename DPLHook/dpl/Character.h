@@ -44,4 +44,7 @@ public:
 	Matrix* GetMatrix();
 	HAnimInstance* GetAnimInstance();
 	CWeapon* GetWeapon();
+
+	bool IsWeaponDrawn();
+	bool IsWeaponRequested();
 };

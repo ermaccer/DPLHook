@@ -116,3 +116,13 @@ CWeapon* CCharacter::GetWeapon()
 		return nullptr;
 	return (CWeapon*)((int)this + 208);
 }
+
+bool CCharacter::IsWeaponDrawn()
+{
+	return 	((bool(__thiscall*)(CCharacter*))0x4EAD61)(this);
+}
+
+bool CCharacter::IsWeaponRequested()
+{
+	return 	((bool(__thiscall*)(CCharacter*))0x4EADA1)(this);
+}

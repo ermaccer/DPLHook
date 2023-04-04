@@ -2,6 +2,8 @@
 #include <iostream>
 #include <Windows.h>
 #include <vector>
+#include <map>
+#include <string>
 
 #include "Settings.h"
 #include "..\eDirectX9Hook.h"
@@ -38,105 +40,105 @@ std::vector<TeleporterPlace> vTeleports;
 DPLMenu* TheMenu = new DPLMenu();
 
 
-static const char* szVehicles[] = {
-	"BX-9",
-	"BX-9 Racer",
-	"Antilli VO3",
-	"Atlus",
-	"Atlus Racer",
-	"Saxon",
-	"Saxon Cargo Trailer",
-	"Saxon Flatbed Trailer",
-	"Saxon Tanker Trailer",
-	"Colonna",
-	"Colonna Racer",
-	"M700",
-	"Hotrod",
-	"Indiana",
-	"Kramer",
-	"Kramer Racer",
-	"Miyagi",
-	"Montara",
-	"Mutsumi 1000R",
-	"MX2000",
-	"MX2000 Racer",
-	"Negotiator",
-	"Torrex",
-	"Torrex Racer",
-	"Olympic",
-	"Paramedic",
-	"Prestige",
-	"Prestige Racer",
-	"Boltus",
-	"Schweizer",
-	"Schweizer Racer",
-	"Security Van",
-	"Teramo",
-	"Teramo Racer",
-	"Zenda",
-	"Zenda Racer",
-	"Cerva",
-	"Cerva Racer",
-	"Bonsai",
-	"Bonsai Racer",
-	"Brooklyn",
-	"Brooklyn Racer",
-	"Bus",
-	"Chauffeur",
-	"Chopper",
-	"Zartex",
-	"Courier",
-	"Cerrano",
-	"Cerrano Racer",
-	"Delivery Van",
-	"Dolva",
-	"Dolva Flatbed",
-	"Dozer",
-	"Andec",
-	"Andec Racer",
-	"Eurotech Lifter (crashes)",
-	"Fairview",
-	"Firetruck",
-	"Grand Valley",
-	"Boldius",
-	"Land Roamer",
-	"Meat Wagon",
-	"Melizzano",
-	"Melizzano Racer",
-	"Raven",
-	"Raven Racer",
-	"Refuse Truck",
-	"Regina",
-	"Regina Racer",
-	"Rhapsody",
-	"Rosalita",
-	"San Marino",
-	"San Marino Racer",
-	"San Marino Spyder",
-	"San Marino Spyder Racer",
-	"School Bus",
-	"Namorra",
-	"Pangea",
-	"Wayfarer",
-	"Wingar",
-	"Woody",
-	"Wrecker",
-	"Yamashita 900",
-	"Mission Truck",
-	"Prison Bus",
-	"Ram Raider",
-	"Prison Van",
-	"Pimp Wagon",
-	"The Mexican's Ride",
-	"SWAT Van",
-	"Antilli VO3 Special",
-	"Cerva Punk",
-	"Brooklyn Punk",
-	"Cerrano Punk",
-	"Andec Punk",
-	"Olympic Punk",
-	"Torrex Turbo",
-	"Wayfarer Turbo",
+std::map<std::string, tVehicleModelUID> mVehicles = {
+	{"BX 9",                                     tVehicleModelUID_BX_9},
+	{"BX 9 Racer",                               tVehicleModelUID_BX_9_Racer},
+	{"Antilli VO3",                              tVehicleModelUID_Antilli_VO3},
+	{"Atlus",                                    tVehicleModelUID_Atlus},
+	{"Atlus Racer",                              tVehicleModelUID_Atlus_Racer},
+	{"Saxon",                                    tVehicleModelUID_Saxon},
+	{"Saxon Cargo Trailer",                      tVehicleModelUID_Saxon_Cargo_Trailer},
+	{"Saxon Flatbed Trailer",                    tVehicleModelUID_Saxon_Flatbed_Trailer},
+	{"Saxon Tanker Trailer",                     tVehicleModelUID_Saxon_Tanker_Trailer},
+	{"Colonna",                                  tVehicleModelUID_Colonna},
+	{"Colonna Racer",                            tVehicleModelUID_Colonna_Racer},
+	{"M700",                                     tVehicleModelUID_M700},
+	{"Hotrod",                                   tVehicleModelUID_Hotrod},
+	{"Indiana",                                  tVehicleModelUID_Indiana},
+	{"Kramer",                                   tVehicleModelUID_Kramer},
+	{"Kramer Racer",                             tVehicleModelUID_Kramer_Racer},
+	{"Miyagi",                                   tVehicleModelUID_Miyagi},
+	{"Montara",                                  tVehicleModelUID_Montara},
+	{"Mutsumi 1000R",                            tVehicleModelUID_Mutsumi_1000R},
+	{"MX2000",                                   tVehicleModelUID_MX2000},
+	{"MX2000 Racer",                             tVehicleModelUID_MX2000_Racer},
+	{"Negotiator",                               tVehicleModelUID_Negotiator},
+	{"Torrex",                                   tVehicleModelUID_Torrex},
+	{"Torrex Racer",                             tVehicleModelUID_Torrex_Racer},
+	{"Olympic",                                  tVehicleModelUID_Olympic},
+	{"Paramedic",                                tVehicleModelUID_Paramedic},
+	{"Prestige",                                 tVehicleModelUID_Prestige},
+	{"Prestige Racer",                           tVehicleModelUID_Prestige_Racer},
+	{"Boltus",                                   tVehicleModelUID_Boltus},
+	{"Schweizer",                                tVehicleModelUID_Schweizer},
+	{"Schweizer Racer",                          tVehicleModelUID_Schweizer_Racer},
+	{"Security Van",                             tVehicleModelUID_Security_Van},
+	{"Teramo",                                   tVehicleModelUID_Teramo},
+	{"Teramo Racer",                             tVehicleModelUID_Teramo_Racer},
+	{"Zenda",                                    tVehicleModelUID_Zenda},
+	{"Zenda Racer",                              tVehicleModelUID_Zenda_Racer},
+	{"Cerva",                                    tVehicleModelUID_Cerva},
+	{"Cerva Racer",                              tVehicleModelUID_Cerva_Racer},
+	{"Bonsai",                                   tVehicleModelUID_Bonsai},
+	{"Bonsai Racer",                             tVehicleModelUID_Bonsai_Racer},
+	{"Brooklyn",                                 tVehicleModelUID_Brooklyn},
+	{"Brooklyn Racer",                           tVehicleModelUID_Brooklyn_Racer},
+	{"Bus",                                      tVehicleModelUID_Bus},
+	{"Chauffeur",                                tVehicleModelUID_Chauffeur},
+	{"Chopper",                                  tVehicleModelUID_Chopper},
+	{"Zartex",                                   tVehicleModelUID_Zartex},
+	{"Courier",                                  tVehicleModelUID_Courier},
+	{"Cerrano",                                  tVehicleModelUID_Cerrano},
+	{"Cerrano Racer",                            tVehicleModelUID_Cerrano_Racer},
+	{"Delivery Van",                             tVehicleModelUID_Delivery_Van},
+	{"Dolva",                                    tVehicleModelUID_Dolva},
+	{"Dolva Flatbed",                            tVehicleModelUID_Dolva_Flatbed},
+	{"Dozer",                                    tVehicleModelUID_Dozer},
+	{"Andec",                                    tVehicleModelUID_Andec},
+	{"Andec Racer",                              tVehicleModelUID_Andec_Racer},
+	{"Eurotech Lifter (crashes)",                tVehicleModelUID_Eurotech_Lifter},
+	{"Fairview",                                 tVehicleModelUID_Fairview},
+	{"Firetruck",                                tVehicleModelUID_Firetruck},
+	{"Grand Valley",                             tVehicleModelUID_Grand_Valley},
+	{"Boldius",                                  tVehicleModelUID_Boldius},
+	{"Land Roamer",                              tVehicleModelUID_Land_Roamer},
+	{"Meat Wagon",                               tVehicleModelUID_Meat_Wagon},
+	{"Melizzano",                                tVehicleModelUID_Melizzano},
+	{"Melizzano Racer",                          tVehicleModelUID_Melizzano_Racer},
+	{"Raven",                                    tVehicleModelUID_Raven},
+	{"Raven Racer",                              tVehicleModelUID_Raven_Racer},
+	{"Refuse Truck",                             tVehicleModelUID_Refuse_Truck},
+	{"Regina",                                   tVehicleModelUID_Regina},
+	{"Regina Racer",                             tVehicleModelUID_Regina_Racer},
+	{"Rhapsody",                                 tVehicleModelUID_Rhapsody},
+	{"Rosalita",                                 tVehicleModelUID_Rosalita},
+	{"San Marino",                               tVehicleModelUID_San_Marino},
+	{"San Marino Racer",                         tVehicleModelUID_San_Marino_Racer},
+	{"San Marino Spyder",                        tVehicleModelUID_San_Marino_Spyder},
+	{"San Marino Spyder Racer",                  tVehicleModelUID_San_Marino_Spyder_Racer},
+	{"School Bus",                               tVehicleModelUID_School_Bus},
+	{"Namorra",                                  tVehicleModelUID_Namorra},
+	{"Pangea",                                   tVehicleModelUID_Pangea},
+	{"Wayfarer",                                 tVehicleModelUID_Wayfarer},
+	{"Wingar",                                   tVehicleModelUID_Wingar},
+	{"Woody",                                    tVehicleModelUID_Woody},
+	{"Wrecker",                                  tVehicleModelUID_Wrecker},
+	{"Yamashita 900",                            tVehicleModelUID_Yamashita_900},
+	{"Mission Truck",                            tVehicleModelUID_Mission_Truck},
+	{"Prison Bus",                               tVehicleModelUID_Prison_Bus},
+	{"Ram Raider",                               tVehicleModelUID_Ram_Raider},
+	{"Prison Van",                               tVehicleModelUID_Prison_Van},
+	{"Pimp Wagon",                               tVehicleModelUID_Pimp_Wagon},
+	{"The Mexicans Ride",                        tVehicleModelUID_The_Mexicans_Ride},
+	{"SWAT Van",                                 tVehicleModelUID_SWAT_Van},
+	{"Antilli VO3 Special",                      tVehicleModelUID_Antilli_VO3_Special},
+	{"Cerva Punk",                               tVehicleModelUID_Cerva_Punk},
+	{"Brooklyn Punk",                            tVehicleModelUID_Brooklyn_Punk},
+	{"Cerrano Punk",                             tVehicleModelUID_Cerrano_Punk},
+	{"Andec Punk",                               tVehicleModelUID_Andec_Punk},
+	{"Olympic Punk",                             tVehicleModelUID_Olympic_Punk},
+	{"Torrex Turbo",                             tVehicleModelUID_Torrex_Turbo},
+	{"Wayfarer Turbo",                           tVehicleModelUID_Wayfarer_Turbo},
 };
 
 static const char* szWeapons[] = {
@@ -157,189 +159,190 @@ static const char* szWeapons[] = {
 	"Blaine"
 };
 
-static const char* szCharacters[] = {
-	"Worker01_Then",
-	"Worker02_Then",
-	"Worker03_Then",
-	"TheDriver_Now",
-	"Upp_W01_Then",
-	"Trucker_Then",
-	"Merc01_Then",
-	"Merc02_Then",
-	"Merc03_Then",
-	"Merc04_Then",
-	"Merc05_Then",
-	"Low_W04_Then",
-	"Low_W03_Then",
-	"Low_W02_Then",
-	"Low_W01_Then",
-	"Hippy01_Then",
-	"Hippy02_Then",
-	"Hippy03_Then",
-	"C01_Then",
-	"C02_Then",
-	"Beatnik01_Then",
-	"Beatnik02_Then",
-	"B03_Then",
-	"B01_Then",
-	"TheKid_Then",
-	"Candy_Now",
-	"Bishop_Then",
-	"Prisoner01_Then",
-	"Prisoner02_Then",
-	"Prisoner03_Then",
-	"Swat01_Then",
-	"Security05_Then",
-	"Security04_Then",
-	"Security03_Then",
-	"Security02_Then",
-	"Security01_Then",
-	"Cop05_Then",
-	"Cop04_Then",
-	"Cop03_Then",
-	"Cop02_Then",
-	"Cop01_Then",
-	"UCW03_Now",
-	"UCW01_Now",
-	"Biker01_Now",
-	"Biker02_Now",
-	"B01_Now",
-	"SG01_Now",
-	"SG02_Now",
-	"SG03_Now",
-	"SG04_Now",
-	"SG05_Now",
-	"MIB01_Now",
-	"MIB02_Now",
-	"MIB03_Now",
-	"CRivals03_Now",
-	"CRivals01_Now",
-	"CRivals02_Now",
-	"CRivals04_Now",
-	"CG01_Now",
-	"CG02_Now",
-	"CG03_Now",
-	"CG04_Now",
-	"CG05_Now",
-	"BGang01_Now",
-	"BGang02_Now",
-	"BGang03_Now",
-	"Hitman01_Now",
-	"Cop02_Now",
-	"Cop03_Now",
-	"Cop01_Now",
-	"Ray_Then",
-	"TheMexican_Then",
-	"RWF02_Then",
-	"RWF01_Then",
-	"RBF01_Then",
-	"PB01_Then",
-	"PB02_Then",
-	"PB03_Then",
-	"Pimp01_Then",
-	"Pimp02_Then",
-	"Liquor01_Then",
-	"TheKidOnline_Then",
-	"RafMartinez_Then",
-	"CandyPrison_Then",
-	"Candy_Then",
-	"Col_Goon01_Then",
-	"Col_Goon02_Then",
-	"Col_Goon03_Then",
-	"Col_Goon04_Then",
-	"Col_Goon05_Then",
-	"Biker01_Then",
-	"Biker02_Then",
-	"Biker03_Then",
-	"UCW02_Now",
-	"RWMale_Now",
-	"PWMale_Now",
-	"PWFemale_Now",
-	"PBMale_Now",
-	"MCWMale_Now",
-	"Low_W03_Now",
-	"Low_W01_Now",
-	"CMale_Now",
-	"CFemale_Now",
-	"B02_Now",
-	"Upp_W05_Then",
-	"Swat_Now",
-	"tourist02_now",
-	"mcwfemale_now",
-	"tourist01_now",
-	"his01_now",
-	"his02_now",
-	"homeless01_now",
-	"homeless02_now",
-	"jogger01_now",
-	"low_w02_now",
-	"rwfemale_now",
-	"corrigan_then",
-	"business01_then",
-	"business02_then",
-	"hooker01_then",
-	"hooker02_then",
-	"pbfemale01_then",
-	"pbfemale02_then",
-	"tourist03_now",
-	"business01_now",
-	"business02_now",
-	"tourist04_now",
-	"jogger02_now",
-	"rwmale01_then",
-	"hooker01_now",
-	"prisonguard01_now",
-	"prisonguard02_now",
-	"rwmale02_then",
-	"hooker02_now",
-	"worker01_now",
-	"pimp01_now",
-	"worker02_now",
-	"fped01_then",
-	"fped02_then",
-	"fped03_then",
-	"fped04_then",
-	"streetgang01_now",
-	"thedriver_online_now",
-	"streetgang02_now",
-	"bishop_now",
-	"corrigan_now",
-	"mariacortez_now",
-	"ray_now",
-	"themexican_now",
-	"spunk01_then",
-	"spunk02_then",
-	"spunk03_then",
-	"spunk04_then",
-	"spunk05_then",
-	"hooker03_then",
-	"mcb02_then",
-	"mcb01_then",
-	"businesswoman02_then",
-	"businesswoman01_then",
-	"oworker02_now",
-	"oworker01_now",
-	"wtstudent02_now",
-	"wtstudent01_now",
-	"phmale_now",
-	"phfemale_now",
-	"mcbmale_now",
-	"mcbfemale_now",
-	"bsgang02_now",
-	"bsgang01_now",
-	"pimp02_now",
-	"trucker02_now",
-	"trucker01_now",
-	"businessw02_now",
-	"businessw01_now",
-	"mcb02_now",
-	"mcb01_now",
-	"cfemale01_then",
-	"slink_then",
-	"slink_now",
-	"rbf02_then",
-	"cmale01_then",
-	"jogger01_then",
+
+std::map<std::string, int> mCharacters = {
+	 {"B01_Now", 0x3F},
+	 {"B01_Then", 0x18},
+	 {"B02_Now", 0x7E},
+	 {"B03_Then", 0x17},
+	 {"Beatnik01_Then", 0x15},
+	 {"Beatnik02_Then", 0x16},
+	 {"BGang01_Now", 0x52},
+	 {"BGang02_Now", 0x53},
+	 {"BGang03_Now", 0x54},
+	 {"Biker01_Now", 0x3D},
+	 {"Biker01_Then", 0x6F},
+	 {"Biker02_Now", 0x3E},
+	 {"Biker02_Then", 0x70},
+	 {"Biker03_Then", 0x71},
+	 {"bishop_now", 0xA7},
+	 {"Bishop_Then", 0x23},
+	 {"bsgang01_now", 0xC0},
+	 {"bsgang02_now", 0xBF},
+	 {"business01_now", 0x93},
+	 {"business01_then", 0x8C},
+	 {"business02_now", 0x94},
+	 {"business02_then", 0x8D},
+	 {"businessw01_now", 0xC5},
+	 {"businessw02_now", 0xC4},
+	 {"businesswoman01_then", 0xB6},
+	 {"businesswoman02_then", 0xB5},
+	 {"C01_Then", 0x13},
+	 {"C02_Then", 0x14},
+	 {"Candy_Now", 0x22},
+	 {"Candy_Then", 0x69},
+	 {"CandyPrison_Then", 0x68},
+	 {"cfemale01_then", 0xC8},
+	 {"CFemale_Now", 0x7D},
+	 {"CG01_Now", 0x4D},
+	 {"CG02_Now", 0x4E},
+	 {"CG03_Now", 0x4F},
+	 {"CG04_Now", 0x50},
+	 {"CG05_Now", 0x51},
+	 {"cmale01_then", 0xCC},
+	 {"CMale_Now", 0x7C},
+	 {"Col_Goon01_Then", 0x6A},
+	 {"Col_Goon02_Then", 0x6B},
+	 {"Col_Goon03_Then", 0x6C},
+	 {"Col_Goon04_Then", 0x6D},
+	 {"Col_Goon05_Then", 0x6E},
+	 {"Cop01_Now", 0x58},
+	 {"Cop01_Then", 0x39},
+	 {"Cop02_Now", 0x56},
+	 {"Cop02_Then", 0x38},
+	 {"Cop03_Now", 0x57},
+	 {"Cop03_Then", 0x37},
+	 {"Cop04_Then", 0x36},
+	 {"Cop05_Then", 0x35},
+	 {"corrigan_now", 0xA8},
+	 {"corrigan_then", 0x8B},
+	 {"CRivals01_Now", 0x4A},
+	 {"CRivals02_Now", 0x4B},
+	 {"CRivals03_Now", 0x49},
+	 {"CRivals04_Now", 0x4C},
+	 {"fped01_then", 0xA0},
+	 {"fped02_then", 0xA1},
+	 {"fped03_then", 0xA2},
+	 {"fped04_then", 0xA3},
+	 {"Hippy01_Then", 0x10},
+	 {"Hippy02_Then", 0x11},
+	 {"Hippy03_Then", 0x12},
+	 {"his01_now", 0x84},
+	 {"his02_now", 0x85},
+	 {"Hitman01_Now", 0x55},
+	 {"homeless01_now", 0x86},
+	 {"homeless02_now", 0x87},
+	 {"hooker01_now", 0x98},
+	 {"hooker01_then", 0x8E},
+	 {"hooker02_now", 0x9C},
+	 {"hooker02_then", 0x8F},
+	 {"hooker03_then", 0xB2},
+	 {"jogger01_now", 0x88},
+	 {"jogger01_then", 0xCD},
+	 {"jogger02_now", 0x96},
+	 {"Liquor01_Then", 0x63},
+	 {"Low_W01_Now", 0x7B},
+	 {"Low_W01_Then", 0xF},
+	 {"low_w02_now", 0x89},
+	 {"Low_W02_Then", 0xE},
+	 {"Low_W03_Now", 0x79},
+	 {"Low_W03_Then", 0xD},
+	 {"Low_W04_Then", 0xC},
+	 {"mariacortez_now", 0xA9},
+	 {"mcb01_now", 0xC7},
+	 {"mcb01_then", 0xB4},
+	 {"mcb02_now", 0xC6},
+	 {"mcb02_then", 0xB3},
+	 {"mcbfemale_now", 0xBE},
+	 {"mcbmale_now", 0xBD},
+	 {"mcwfemale_now", 0x82},
+	 {"MCWMale_Now", 0x77},
+	 {"Merc01_Then", 0x7},
+	 {"Merc02_Then", 0x8},
+	 {"Merc03_Then", 0x9},
+	 {"Merc04_Then", 0xA},
+	 {"Merc05_Then", 0xB},
+	 {"MIB01_Now", 0x46},
+	 {"MIB02_Now", 0x47},
+	 {"MIB03_Now", 0x48},
+	 {"oworker01_now", 0xB8},
+	 {"oworker02_now", 0xB7},
+	 {"PB01_Then", 0x5E},
+	 {"PB02_Then", 0x5F},
+	 {"PB03_Then", 0x60},
+	 {"pbfemale01_then", 0x90},
+	 {"pbfemale02_then", 0x91},
+	 {"PBMale_Now", 0x76},
+	 {"phfemale_now", 0xBC},
+	 {"phmale_now", 0xBB},
+	 {"pimp01_now", 0x9E},
+	 {"Pimp01_Then", 0x61},
+	 {"pimp02_now", 0xC1},
+	 {"Pimp02_Then", 0x62},
+	 {"Prisoner01_Then", 0x24},
+	 {"Prisoner02_Then", 0x25},
+	 {"Prisoner03_Then", 0x26},
+	 {"prisonguard01_now", 0x99},
+	 {"prisonguard02_now", 0x9A},
+	 {"PWFemale_Now", 0x75},
+	 {"PWMale_Now", 0x74},
+	 {"RafMartinez_Then", 0x67},
+	 {"ray_now", 0xAA},
+	 {"Ray_Then", 0x59},
+	 {"RBF01_Then", 0x5D},
+	 {"rbf02_then", 0xCB},
+	 {"RWF01_Then", 0x5C},
+	 {"RWF02_Then", 0x5B},
+	 {"rwfemale_now", 0x8A},
+	 {"rwmale01_then", 0x97},
+	 {"rwmale02_then", 0x9B},
+	 {"RWMale_Now", 0x73},
+	 {"Security01_Then", 0x34},
+	 {"Security02_Then", 0x33},
+	 {"Security03_Then", 0x32},
+	 {"Security04_Then", 0x31},
+	 {"Security05_Then", 0x30},
+	 {"SG01_Now", 0x41},
+	 {"SG02_Now", 0x42},
+	 {"SG03_Now", 0x43},
+	 {"SG04_Now", 0x44},
+	 {"SG05_Now", 0x45},
+	 {"slink_now", 0xCA},
+	 {"slink_then", 0xC9},
+	 {"spunk01_then", 0xAD},
+	 {"spunk02_then", 0xAE},
+	 {"spunk03_then", 0xAF},
+	 {"spunk04_then", 0xB0},
+	 {"spunk05_then", 0xB1},
+	 {"streetgang01_now", 0xA4},
+	 {"streetgang02_now", 0xA6},
+	 {"Swat01_Then", 0x2F},
+	 {"Swat_Now", 0x80},
+	 {"TheDriver_Now", 0x4},
+	 {"thedriver_online_now", 0xA5},
+	 {"TheKid_Then", 0x1D},
+	 {"TheKidOnline_Then", 0x64},
+	 {"themexican_now", 0xAC},
+	 {"TheMexican_Then", 0x5A},
+	 {"tourist01_now", 0x83},
+	 {"tourist02_now", 0x81},
+	 {"tourist03_now", 0x92},
+	 {"tourist04_now", 0x95},
+	 {"trucker01_now", 0xC3},
+	 {"trucker02_now", 0xC2},
+	 {"Trucker_Then", 0x6},
+	 {"UCW01_Now", 0x3C},
+	 {"UCW02_Now", 0x72},
+	 {"UCW03_Now", 0x3A},
+	 {"Upp_W01_Then", 0x5},
+	 {"Upp_W05_Then", 0x7F},
+	 {"worker01_now", 0x9D},
+	 {"Worker01_Then", 0x1},
+	 {"worker02_now", 0x9F},
+	 {"Worker02_Then", 0x2},
+	 {"Worker03_Then", 0x3},
+	 {"wtstudent01_now", 0xBA},
+	 {"wtstudent02_now", 0xB9},
 };
 
 static void ShowHelpMarker(const char* desc)
@@ -356,12 +359,12 @@ static void ShowHelpMarker(const char* desc)
 
 }
 
-
 DPLMenu::DPLMenu()
 {
-	sprintf(vehicle, szVehicles[0]);
+	sprintf(vehicle, "Andec");
 	sprintf(weapon, szWeapons[0]);
 	sprintf(animation, szAnimations[0]);
+	sprintf(character, "TheKid_Then");
 	m_vecCamRotation.X = 0;
 	m_vecCamRotation.Y = 0;
 	m_vecCamRotation.Z = 0;
@@ -424,6 +427,13 @@ void DPLMenu::OnToggleSlowMotion()
 void DPLMenu::OnToggleHUD()
 {
 	m_bDisableHUD ^= 1;
+}
+
+void DPLMenu::OnToggleSetCamRot()
+{
+	m_vecCamRotation.X = 0;
+	m_vecCamRotation.Y = 0;
+	m_vecCamRotation.Z = 0;
 }
 
 void DPLMenu::OnToggleInvincibility()
@@ -586,17 +596,6 @@ void DPLMenu::UpdateKeys()
 {
 	if (m_bPressingKey)
 		return;
-
-	if (GetAsyncKeyState(SettingsMgr->iMenuOpenKey) & 0x1)
-		TheMenu->OnActivate();
-	if (GetAsyncKeyState(SettingsMgr->iToggleHUDKey) & 0x1)
-		TheMenu->OnToggleHUD();
-	if (GetAsyncKeyState(SettingsMgr->iToggleSlowMoKey) & 0x1)
-		TheMenu->OnToggleSlowMotion();
-	if (GetAsyncKeyState(SettingsMgr->iPlayLastAnimationKey) & 0x1)
-		TheMenu->OnActivatePlayLastAnim();
-	if (GetAsyncKeyState(SettingsMgr->iStopLastAnimationKey) & 0x1)
-		TheMenu->OnActivateStopLastAnim();
 }
 
 void DPLMenu::UpdateFreeCamera()
@@ -800,10 +799,27 @@ void DPLMenu::DrawPlayerTab()
 	if (ImGui::CollapsingHeader("Model"))
 	{
 		static int nModel = 29;
-		ImGui::TextWrapped("Character ID");
+		ImGui::TextWrapped("Model Name");
 		ImGui::PushItemWidth(-FLT_MIN);
-		ImGui::InputInt("##mid", &nModel);
+		if (ImGui::BeginCombo("##clist", character))
+		{
+			for (auto m : mCharacters)
+			{
+				bool is_selected = strcmp(character, m.first.c_str()) == 0;
+				if (ImGui::Selectable(m.first.c_str(), is_selected))
+				{
+					nModel = m.second;
+					sprintf(character, m.first.c_str());
+				}
+
+				if (is_selected)
+					ImGui::SetItemDefaultFocus();
+
+			}
+			ImGui::EndCombo();
+		}
 		ImGui::PopItemWidth();
+
 		if (nModel < 1)
 			nModel = 1;
 		if (ImGui::Button("Set Model", { -FLT_MIN, 0 }))
@@ -850,10 +866,20 @@ void DPLMenu::DrawPlayerTab()
 			{
 				CPlayerDriverBehaviour* player = GetLifeSystem()->GetPlayer()->GetDriverBehaviour();
 
-				CCharacterWeapons* weaps = player->GetWeapons();
-				weaps->ClearAllWeapons();
-				Notifications->SetNotificationTime(2500);
-				Notifications->PushNotification("Weapons removed!");
+				if (player->GetCharacter()->GetWeapon() || player->GetCharacter()->IsWeaponDrawn() 
+					|| player->GetCharacter()->IsWeaponRequested())
+				{
+					Notifications->SetNotificationTime(2500);
+					Notifications->PushNotification("Unequip weapon first!");
+
+				}
+				else
+				{
+					CCharacterWeapons* weaps = player->GetWeapons();
+					weaps->ClearAllWeapons();
+					Notifications->SetNotificationTime(2500);
+					Notifications->PushNotification("Weapons removed!");
+				}
 			}
 			else
 			{
@@ -949,14 +975,19 @@ void DPLMenu::DrawPlayerTab()
 void DPLMenu::DrawVehicleTab()
 {
 	ImGui::TextWrapped("Vehicle");
+	static tVehicleModelUID vID = tVehicleModelUID_BX_9;
 	ImGui::PushItemWidth(-FLT_MIN);
 	if (ImGui::BeginCombo("##vehlist", vehicle))
 	{
-		for (int n = 0; n < IM_ARRAYSIZE(szVehicles); n++)
+		for (auto m : mVehicles)
 		{
-			bool is_selected = (vehicle == szVehicles[n]);
-			if (ImGui::Selectable(szVehicles[n], is_selected))
-				sprintf(vehicle, szVehicles[n]);
+			bool is_selected = strcmp(vehicle, m.first.c_str()) == 0;
+			if (ImGui::Selectable(m.first.c_str(), is_selected))
+			{
+				vID = m.second;
+				sprintf(vehicle, m.first.c_str());
+			}
+
 			if (is_selected)
 				ImGui::SetItemDefaultFocus();
 
@@ -965,6 +996,11 @@ void DPLMenu::DrawVehicleTab()
 	}
 
 	ImGui::PopItemWidth();
+
+
+	ImGui::PopItemWidth();
+
+
 
 	static Vector carPos = { 0, 0, 0 };
 
@@ -1000,7 +1036,7 @@ void DPLMenu::DrawVehicleTab()
 		}
 
 
-		CreateVehicle(GetUIDFromName(vehicle), &carPos);
+		CreateVehicle(vID, &carPos);
 	}
 
 
@@ -1012,9 +1048,12 @@ void DPLMenu::DrawCameraTab()
 
 	if (!cam)
 		return;
+
 	ImGui::Checkbox("Set Camera Position", &m_bCustomCameraPos);
 	ImGui::InputFloat3("X | Y | Z", &m_mCameraMatrix.pos.X);
-	ImGui::Checkbox("Set Camera Rotation", &m_bCustomCameraRot);
+	if (ImGui::Checkbox("Set Camera Rotation", &m_bCustomCameraRot))
+		OnToggleSetCamRot();
+
 	ImGui::InputFloat3("Pitch | Yaw | Roll", &m_vecCamRotation.X);
 	ImGui::Checkbox("Set FOV", &m_bCustomCameraFOV);
 	ImGui::InputFloat("FOV", &m_fCamFOV);
@@ -1418,19 +1457,6 @@ void DPLMenu::LoadLocationFile()
 	}
 }
 
-tVehicleModelUID GetUIDFromName(const char* name)
-{
-	int id = 0;
-	for (int i = 0; i < sizeof(szVehicles) / sizeof(szVehicles[0]); i++)
-	{
-		if (strcmp(szVehicles[i], name) == 0)
-		{
-			id = i;
-			break;
-		}
-	}
-	return (tVehicleModelUID)id;
-}
 
 EWeapons GetWIDFromName(const char* name)
 {

@@ -217,6 +217,16 @@ LRESULT __stdcall eDirectX9Hook::WndProc(const HWND hWnd, UINT uMsg, WPARAM wPar
 		TheMenu->m_bIsFocused = true;
 		break;
 	case WM_KEYDOWN:
+		if (wParam == SettingsMgr->iMenuOpenKey)
+			TheMenu->OnActivate();
+		if (wParam == SettingsMgr->iToggleHUDKey)
+			TheMenu->OnToggleHUD();
+		if (wParam == SettingsMgr->iToggleSlowMoKey)
+			TheMenu->OnToggleSlowMotion();
+		if (wParam == SettingsMgr->iPlayLastAnimationKey)
+			TheMenu->OnActivatePlayLastAnim();
+		if (wParam == SettingsMgr->iStopLastAnimationKey)
+			TheMenu->OnActivateStopLastAnim();
 		break;
 	default:
 		break;
